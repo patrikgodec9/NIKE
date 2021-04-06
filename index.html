@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+ 
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+		background-image:url('ozadje.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed; 
+		background-size: 100% 100%;
+		}
+			ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  webkit-animation: bgcolor 20s infinite;
+			animation: bgcolor 10s infinite;
+			webkit-animation-direction: alternate;
+			animation-direction: alternate;
+			 }
+			 
+			@keyframes bgcolor {
+				0% {
+					background-color: #197A9F
+				}
+
+				30% {
+					background-color: #34495E
+				}
+
+				60% {
+					background-color: #DAF7A6
+				}
+
+				90% {
+					background-color: #6E2F91 
+				}
+
+				100% {
+					background-color: #36AA55 
+				}
+			}
+			
+			li {
+			  float: left;
+			}
+
+			li a {
+			  display: block;
+			  color: white;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			li a:hover {
+			  background-color: #111;
+			}
+			
+			#bezier{
+			position:absolute;
+			transform:scale(0.15);
+			top:-200px;
+			left:360px;
+			background-repeat:no-repeat;
+			}
+			
+			#majca{
+			top:150px;
+			left:760px;
+			position:absolute;
+			width:500px;
+			height:450px;
+			background-image:url('majca.png');
+			background-repeat:no-repeat;
+			}
+			
+			.napis{
+				color:white;
+				text-align:center;
+			}
+			
+			
+    </style>
+  </head>
+  <body>
+  
+		
+	<ul>
+		<li><a  href="ORIGINAL.html">ORIGINAL</a></li>
+		<li><a href="SVG.html" >SVG</a></li>
+		<li><a href="index.html" >BEZIER</a></li>
+	</ul>
+	
+	<div class="napis">
+  <p>Če želite kupiti kratko Nike majico kliknite na sredino majice</p>
+  </div>
+  
+	<div id="majca">
+	<a href="https://www.nike.com/si/w/mens-graphic-t-shirts-5shrvznik1" target="_blank">
+	</div>
+		
+	<div id="bezier">
+		
+   <canvas id="myCanvas" width="1200" height="1200"  ></canvas>
+   
+	
+	
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+	
+      context.beginPath();
+      context.moveTo(250, 10);
+      context.bezierCurveTo(20,280,100,470,430,360);
+	  context.quadraticCurveTo(430,370,1200,10);
+	  context.quadraticCurveTo(1200,10,450,225);
+	  context.bezierCurveTo(340, 250, 130, 240, 250, 10);
+      context.lineWidth = 1;
+	  
+
+      // line color
+	  context.fill();
+      context.strokeStyle = 'black';
+	  context.fillStyle ='black';
+      context.stroke();
+    </script>
+	</div>
+	
+  </body>
+</html>      
